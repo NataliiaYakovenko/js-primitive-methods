@@ -50,9 +50,12 @@ console.log(isEqual("aaa", "EEE"));
 //*6. Написати функцію, яка викидає помилку під час роботи
 // і перевірити роботу функції, викликавши її у блоці try-catch
 
-function getSumNumbers(a,b) {
-  if(b === undefined){
-    throw new Error('The second parameter is not passed')
+function getSumNumbers(a, b) {
+  if (b === undefined) {
+    throw new Error("The second parameter is not passed");
+  }
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new TypeError("It must be number");
   }
   return a + b;
 }
@@ -62,4 +65,4 @@ try {
   console.log(error);
 }
 
-console.log('Hello');
+console.log("Hello");
