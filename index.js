@@ -5,14 +5,14 @@ const stringArray = Array.from(string).reverse().join("");
 console.log(stringArray);
 //-----------------------------------------------------------------------------------------------
 //2. Написати функцію, яка приймає число з дрібною частиною і повертає тільки цілу частину
-//Варіает1
+//Варіант1
 
 function returnsIntegerPart(number) {
   return Math.floor(number);
 }
 console.log(returnsIntegerPart(15.66));
 
-//Варіает2
+//Варіант2
 function returnsIntegerPart1(number) {
   return Math.ceil(number);
 }
@@ -50,11 +50,14 @@ console.log(isEqual("aaa", "EEE"));
 //*6. Написати функцію, яка викидає помилку під час роботи
 // і перевірити роботу функції, викликавши її у блоці try-catch
 
-function getSumNumbers(a) {
+function getSumNumbers(a,b) {
+  if(b === undefined){
+    throw new Error('The second parameter is not passed')
+  }
   return a + b;
 }
 try {
-  console.log(getSumNumbers(1, 2));
+  console.log(getSumNumbers(5));
 } catch (error) {
   console.log(error);
 }
